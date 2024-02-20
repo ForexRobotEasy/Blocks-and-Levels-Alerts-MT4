@@ -1,0 +1,170 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                        Blocks and Levels Alerts MT4|
+//|                                   Copyright © 2021 forexroboteasy.com|
+//|                                      Developed by Forex Robot Easy Team|
+//+------------------------------------------------------------------+
+#property strict
+
+//+------------------------------------------------------------------+
+//| Global Variables                                                  |
+//+------------------------------------------------------------------+
+input bool enableAlerts = true; // Enable/disable alerts
+input bool enableEmailAlerts = true; // Enable/disable email alerts
+input string emailAddress = 'example@email.com'; // Email address for alerts
+
+//+------------------------------------------------------------------+
+//| Key Shortcuts                                                      |
+//+------------------------------------------------------------------+
+input int drawBlocksShortcut = VK_F1; // Key shortcut to draw Blocks
+input int drawLevelsShortcut = VK_F2; // Key shortcut to draw Levels
+input int drawBlocksZonesShortcut = VK_F3; // Key shortcut to draw Blocks Zones
+input int changeTimeframeShortcut = VK_F4; // Key shortcut to change chart Timeframe
+input int selectAllShortcut = VK_F5; // Key shortcut to select all drawn objects
+input int deselectAllShortcut = VK_F6; // Key shortcut to deselect all drawn objects
+
+//+------------------------------------------------------------------+
+//| OnTick function                                                   |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Check for key shortcuts
+   if (IsKeyPressed(drawBlocksShortcut))
+   {
+      DrawBlocks();
+   }
+   else if (IsKeyPressed(drawLevelsShortcut))
+   {
+      DrawLevels();
+   }
+   else if (IsKeyPressed(drawBlocksZonesShortcut))
+   {
+      DrawBlocksZones();
+   }
+   else if (IsKeyPressed(changeTimeframeShortcut))
+   {
+      ChangeTimeframe();
+   }
+   else if (IsKeyPressed(selectAllShortcut))
+   {
+      SelectAllObjects();
+   }
+   else if (IsKeyPressed(deselectAllShortcut))
+   {
+      DeselectAllObjects();
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Draw Blocks function                                              |
+//+------------------------------------------------------------------+
+void DrawBlocks()
+{
+   // Code to draw Blocks
+   // ...
+   
+   // Trigger alerts if enabled
+   if (enableAlerts)
+   {
+      Alert('Blocks drawn');
+      if (enableEmailAlerts)
+      {
+         SendMail('Blocks drawn', 'Blocks have been drawn on the chart.', emailAddress);
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Draw Levels function                                              |
+//+------------------------------------------------------------------+
+void DrawLevels()
+{
+   // Code to draw Levels
+   // ...
+   
+   // Trigger alerts if enabled
+   if (enableAlerts)
+   {
+      Alert('Levels drawn');
+      if (enableEmailAlerts)
+      {
+         SendMail('Levels drawn', 'Levels have been drawn on the chart.', emailAddress);
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Draw Blocks Zones function                                        |
+//+------------------------------------------------------------------+
+void DrawBlocksZones()
+{
+   // Code to draw Blocks Zones
+   // ...
+   
+   // Trigger alerts if enabled
+   if (enableAlerts)
+   {
+      Alert('Blocks Zones drawn');
+      if (enableEmailAlerts)
+      {
+         SendMail('Blocks Zones drawn', 'Blocks Zones have been drawn on the chart.', emailAddress);
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Change Timeframe function                                         |
+//+------------------------------------------------------------------+
+void ChangeTimeframe()
+{
+   // Code to change chart Timeframe
+   // ...
+   
+   // Trigger alerts if enabled
+   if (enableAlerts)
+   {
+      Alert('Chart Timeframe changed');
+      if (enableEmailAlerts)
+      {
+         SendMail('Chart Timeframe changed', 'The chart Timeframe has been changed.', emailAddress);
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Select All Objects function                                       |
+//+------------------------------------------------------------------+
+void SelectAllObjects()
+{
+   // Code to select all drawn objects
+   // ...
+   
+   // Trigger alerts if enabled
+   if (enableAlerts)
+   {
+      Alert('All objects selected');
+      if (enableEmailAlerts)
+      {
+         SendMail('All objects selected', 'All drawn objects have been selected.', emailAddress);
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Deselect All Objects function                                     |
+//+------------------------------------------------------------------+
+void DeselectAllObjects()
+{
+   // Code to deselect all drawn objects
+   // ...
+   
+   // Trigger alerts if enabled
+   if (enableAlerts)
+   {
+      Alert('All objects deselected');
+      if (enableEmailAlerts)
+      {
+         SendMail('All objects deselected', 'All drawn objects have been deselected.', emailAddress);
+      }
+   }
+}
